@@ -22,7 +22,7 @@
 
 ### 最新版本（Latest version）：
 
-<http://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.doc> (Authoritative)
+<http://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.docx> (Authoritative)
 
 <http://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html>
 
@@ -34,7 +34,7 @@
 
 #### 主席（Chairs）：
 
-拉斐尔·J·科恩 (<raphael.cohn@stormmq.com>), 个人
+布莱恩·雷莫尔 (<brian.raymor@microsoft.com>), [Microsoft](http://www.microsoft.com)
 
 理查德·J·科彭 (<coppen@uk.ibm.com>), [IBM](http://www.ibm.com/)
 
@@ -42,13 +42,21 @@
 
 安德鲁·班克斯 (<Andrew_Banks@uk.ibm.com>), [IBM](http://www.ibm.com/)
 
+埃德·布里格斯 (<edbriggs@microsoft.com>), [Microsoft](http://www.microsoft.com/)
+
+肯·博根代尔 (<Andrew_Banks@uk.ibm.com>), [IBM](http://www.ibm.com/)
+
 拉胡尔·吉普塔 (<rahul.gupta@us.ibm.com>), [IBM](http://www.ibm.com/)
 
 ### 相关文档（Related work）：
 
+#### 本规范将会取代：
+
+-   由安德鲁·班克斯和拉胡尔·吉普塔合作编辑的 MQTT 3.1.1 版，2014 年 10 月 29 日，OASIS 标准。<http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html>
+
 #### 本规范与此有关：
 
--   MQTT和NIST网络安全框架1.0版。 编辑是杰夫·布朗和路易·菲利普·拉穆勒。最新版本： <http://docs.oasis-open.org/mqtt/mqtt-nist-cybersecurity/v1.0/mqtt-nist-cybersecurity-v1.0.html>.
+-   MQTT 和 NIST 网络安全框架 1.0 版。 编辑是杰夫·布朗和路易·菲利普·拉穆勒。最新版本： <http://docs.oasis-open.org/mqtt/mqtt-nist-cybersecurity/v1.0/mqtt-nist-cybersecurity-v1.0.html>.
 
 ### 摘要 （Abstract）
 
@@ -68,39 +76,38 @@ MQTT是一个客户端服务端架构的发布/订阅模式的消息传输协议
 
 ### 状态 （Status）
 
-本文档最后由OASIS成员在上面标示的日期最终修订或批准。批准的级别也在上面列出了。如果要查看本文档最新的修订版请检查上面的 *最新版本* 位置。技术委员会产生的其它修订版和其它技术文档都列在这里：<https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=mqtt#technical> 。
+本文档最后由 OASIS MQTT 技术委员会在上面标示的日期最终修订或批准。批准的级别也在上面列出了。如果要查看本文档最新的修订版请检查上面的 *最新版本* 位置。技术委员会产生的其它修订版和其它技术文档都列在这里：<https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=mqtt#technical> 。
 
 技术委员会成员对本规范的评论应该发送到技术委员会的邮件列表。其他人应该发送评论到技术委员会的公共评论列表，方法是点击技术委员会网站的 [发送评论](https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=mqtt) 按钮，网页地址是 <https://www.oasis-open.org/committees/mqtt/> 。
 
-关于实现本规范必不可少的任何专利是否已公开，以及其它的专利许可条款相关的信息，请参考技术委员会网站的知识产权部分（(<https://www.oasis-open.org/committees/mqtt/ipr.php>）。
+本委员会规范是在 [OASIS 知识产权政策](https://www.oasis-open.org/policies-guidelines/ipr)的[非断言模式](https://www.oasis-open.org/policies-guidelines/ipr#Non-Assertion-Mode)下提供的，该模式是技术委员会成立时选择的模式。关于实现本规范必不可少的任何专利是否已公开，以及其它的专利许可条款相关的信息，请参考技术委员会网站的知识产权部分（(<https://www.oasis-open.org/committees/mqtt/ipr.php>）。
 
-### 引用格式（Citation format）：
+请注意，任何声明为该工作成果标准的机器可读内容（[计算机语言定义](https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26#wpComponentsCompLang)）都是在单独的纯文本文件中提供的。当在工作产品的散文叙事文档中任何此类纯文本文件和显示内容之间存在差异时，以单独的纯文本文件为准。
+
+### 引用格式 （Citation format）：
 
 引用此规范时应该使用下面的引文格式：
 
 **\[mqtt-v5.0\]**
 
-*MQTT Version 3.1.1*. Edited by Andrew Banks and Rahul Gupta*.* 29 October 2014. OASIS Standard. <http://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html>. Latest version: <http://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html>.
+*MQTT 5.0 版本*. 由安德鲁·班克斯和拉胡尔·吉普塔合作编辑. 2017 年 12 月 25 日. OASIS 标准. <http://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html>. 最新版: <http://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html>.
 
 ### 文档链接
 
-- [MQTT协议3.1.1中文翻译项目](https://github.com/mcxiaoke/mqtt)
-- [MQTT协议3.1.1中文版PDF](https://github.com/mcxiaoke/mqtt/blob/master/protocol/MQTT-3.1.1-CN.pdf)
+- [MQTT协议5.0中文翻译项目](https://github.com/Gilbert-Wong/mqtt_v5.0)
+<!-- - [MQTT协议5.0中文版PDF](https://github.com/Gilbert-Wong/mqtt_v5.0/blob/master/protocol/MQTT-5.0-CN.pdf) -->
 
 ## 修订记录
 
 | **版 本** | **日 期**  | **发布说明**                               |
 |-----------|------------|------------------------------------------|
-| 1.0.0     | 2015-07-30 | 翻译全部文本，完成初步审校，公开发布第一版 |
-| 1.0.1     | 2015-10-22 | 修订几处笔误，增补几处未翻译的文本         |
-| 1.0.2     | 2016-02-04 | 转换为Markdown格式，发布更有好的在线阅读版本 |
-| 1.0.3     | 2016-02-06 | 补充中英文对照，修正部分链接和格式 |
+| 1.0.0     | 2018-07-18 | 翻译全部文本，完成初步审校，公开发布第一版 |
 
 ## 译者
 
-- [GitHub](https://github.com/mcxiaoke)
-- [Blog](http://blog.mcxiaoke.com/)
-- [Email](mailto:mail@mcxiaoke.com)
+- [GitHub](https://github.com/Gilbert-Wong)
+- [Blog](http://blog.gilbertwong.co/)
+- [Email](mailto:gilbertwong96@icloud.com)
 
 ## 目录
 
