@@ -179,742 +179,208 @@ CONNECT, CONNACK, PUBLISH, PUBACK, PUBREC, PUBREL, PUBCOMP, SUBSCRIBE, SUBACK, U
 属性由标识符构成，标识符定义了属性的使用，数据类型以及属性的值。标识符由可变字节整形编码。倘若控制报文包含对其数据报文类型无效的标识符或包含非指定数据类型的值的控制报文，则该控制报文是畸形报文。如果接收到这样的报文，则使用带有原因码 0x81（畸形报文）的 CONNACK 报文或 DISCONNECT 报文去按照 [4.13 节](#anchor-4.13) 所描述的那样处理错误。带有不同标识符的属性的顺序没有意义。
 
 ##### 表格 2.4 - 属性
-<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="685" style="width:513.9pt;border-collapse:collapse;border:none">
- <tbody><tr style="page-break-inside:avoid">
-  <td width="95" colspan="2" valign="top" style="width:71.55pt;border:solid windowtext 1.0pt;
-  background:white;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><b>标识符 Identifier</b></p>
-  </td>
-  <td width="188" rowspan="2" valign="top" style="width:141.3pt;border:solid windowtext 1.0pt;
-  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><b>名称（用法）Name(usage)</b></p>
-  </td>
-  <td width="150" rowspan="2" valign="top" style="width:112.6pt;border:solid windowtext 1.0pt;
-  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><b>类型 Type</b></p>
-  </td>
-  <td width="251" rowspan="2" valign="top" style="width:188.45pt;border:solid windowtext 1.0pt;
-  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><b>报文/遗嘱属性 Packet/Will Properties</b></p>
-  <p class="MsoNormal"><b>&nbsp;</b></p>
-  </td>
+<table style="text-align:center">
+ <tbody>
+ <tr>
+  <td colspan="2"><b>标识符 Identifier</b></td>
+  <td rowspan="2"><b>名称（用法）Name(usage)</b></td>
+  <td rowspan="2"><b>类型 Type</b></td>
+  <td rowspan="2"><b>报文/遗嘱属性 Packet/Will Properties</b></td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;background:white;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><b>十进制 Dec</b></p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:white;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><b>十六进制 Hex</b></p>
-  </td>
+ <tr>
+  <td><b>十进制 Dec</b></td>
+  <td><b>十六进制 Hex</b></td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">1</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x01</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">有效载荷格式指示器 Payload Format Indicator</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">字节</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">PUBLISH, 遗嘱属性 Will Properties</p>
-  </td>
+ <tr>
+  <td>1</td>
+  <td>0x01</td>
+  <td>有效载荷格式指示器 Payload Format Indicator</td>
+  <td>字节</td>
+  <td>PUBLISH, 遗嘱属性 Will Properties</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">2</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x02</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">消息到期间隔 Message Exipiry Interval</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">四字节整形</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">PUBLISH，遗嘱属性</p>
-  </td>
+ <tr>
+  <td>2</td>
+  <td>0x02</td>
+  <td>消息到期间隔 Message Exipiry Interval</td>
+  <td>四字节整形</td>
+  <td>PUBLISH，遗嘱属性</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">3</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x03</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">内容类型 Content Type</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">UTF-8 编码字符串</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">PUBLISH，遗嘱属性</p>
-  </td>
+ <tr>
+  <td>3</td>
+  <td>0x03</td>
+  <td>内容类型 Content Type</td>
+  <td>UTF-8 编码字符串</td>
+  <td>PUBLISH，遗嘱属性</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">8</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x08</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">响应主题 Response Topic</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">UTF-8 编码字符串</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">PUBLISH，遗嘱属性</p>
-  </td>
+ <tr>
+  <td>8</td>
+  <td>0x08</td>
+  <td>响应主题 Response Topic</td>
+  <td>UTF-8 编码字符串</td>
+  <td>PUBLISH，遗嘱属性</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">9</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x09</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">关联数据 Correlation Data</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">二进制数据 Binary Data</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">PUBLISH，遗嘱属性</p>
-  </td>
+ <tr>
+  <td>9</td>
+  <td>0x09</td>
+  <td>关联数据 Correlation Data</td>
+  <td>二进制数据 Binary Data</td>
+  <td>PUBLISH，遗嘱属性</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">11</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x0B</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">订阅标识符 Subscription Identifier</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">可变字节整形</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">PUBLISH, SUBSCRIBE</p>
-  </td>
+ <tr>
+  <td>11</td>
+  <td>0x0B</td>
+  <td>订阅标识符 Subscription Identifier</td>
+  <td>可变字节整形</td>
+  <td>PUBLISH, SUBSCRIBE</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">17</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x11</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">会话到期间隔 Session Expiry Interval</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">四字节整形</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNECT,  CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>17</td>
+  <td>0x11</td>
+  <td>会话到期间隔 Session Expiry Interval</td>
+  <td>四字节整形</td>
+  <td>CONNECT,  CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">18</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x12</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" style="text-align:justify"> 已分配客户端标识符 Assigned Client Identifier</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">UTF-8 编码字符串</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>18</td>
+  <td>0x12</td>
+  <td>已分配客户端标识符 Assigned Client Identifier</td>
+  <td>UTF-8 编码字符串</td>
+  <td>CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">19</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x13</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" style="text-align:justify">服务器保活 Server Keep Alive</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">两字节整形</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>19</td>
+  <td>0x13</td>
+  <td>服务器保活 Server Keep Alive</td>
+  <td>两字节整形</td>
+  <td>CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">21</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x15</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" style="text-align:justify">认证方法 Authentication Method</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">UTF-8 编码字符串</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNECT, CONNACK, AUTH</p>
-  </td>
+ <tr>
+  <td>21</td>
+  <td>0x15</td>
+  <td>认证方法 Authentication Method</td>
+  <td>UTF-8 编码字符串</td>
+  <td>CONNECT, CONNACK, AUTH</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">22</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x16</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" style="text-align:justify">认证数据 Authentication Data</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">二进制数据</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNECT, CONNACK, AUTH</p>
-  </td>
+ <tr>
+  <td>22</td>
+  <td>0x16</td>
+  <td>认证数据 Authentication Data</td>
+  <td>二进制数据</td>
+  <td>CONNECT, CONNACK, AUTH</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">23</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x17</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" style="text-align:justify">请求问题信息 Request Problem Information</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">字节</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNECT</p>
-  </td>
+ <tr>
+  <td>23</td>
+  <td>0x17</td>
+  <td>>字节</td>
+  <td>CONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">24</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x18</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" style="text-align:justify">遗嘱延迟间隔 Will Delay Interval</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">四字节整形</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">遗嘱属性 Will Properties</p>
-  </td>
+ <tr>
+  <td>24</td>
+  <td>0x18</td>
+  <td>遗嘱延迟间隔 Will Delay Interval</td>
+  <td>四字节整形</td>
+  <td>遗嘱属性 Will Properties</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">25</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x19</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">请求响应信息 Request Response Information</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">字节</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNECT</p>
-  </td>
+ <tr>
+  <td>25</td>
+  <td>0x19</td>
+  <td>请求响应信息 Request Response Information</td>
+  <td>字节</td>
+  <td>CONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">26</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x1A</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" style="text-align:justify">响应信息 Response Information</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">UTF-8 编码字符串</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>26</td>
+  <td>0x1A</td>
+  <td>响应信息 Response Information</td>
+  <td>UTF-8 编码字符串</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">28</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x1C</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" style="text-align:justify">服务器引用 Server Reference</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">UTF-8 编码字符串</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>28</td>
+  <td>0x1C</td>
+  <td>服务器引用 Server Reference</td>
+  <td>UTF-8 编码字符串</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">31</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x1F</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" style="text-align:justify">原因字符串 Reason String</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">UTF-8 编码字符串</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, PUBACK, PUBREC, PUBREL, PUBCOMP, SUBACK,
-  UNSUBACK, DISCONNECT, AUTH</p>
-  </td>
+ <tr>
+  <td>31</td>
+  <td>0x1F</td>
+  <td>原因字符串 Reason String</td>
+  <td>UTF-8 编码字符串</td>
+  <td>CONNACK, PUBACK, PUBREC, PUBREL, PUBCOMP, SUBACK,UNSUBACK, DISCONNECT, AUTH</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">33</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x21</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">接收最大值 Receive Maximum</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">两字节整形</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNECT, CONNACK</p>
-  </td>
+ <tr>
+  <td>33</td>
+  <td>0x21</td>
+  <td>接收最大值 Receive Maximum</td>
+  <td>两字节整形</td>
+  <td>CONNECT, CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">34</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x22</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">主题别名最大值 Topic Alias Maximum</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">两字节整形</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNECT, CONNACK</p>
-  </td>
+ <tr>
+  <td>34</td>
+  <td>0x22</td>
+  <td>主题别名最大值 Topic Alias Maximum</td>
+  <td>两字节整形</td>
+  <td>CONNECT, CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">35</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x23</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">主题别名 Topic Alias</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">两字节整形</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">PUBLISH</p>
-  </td>
+ <tr>
+  <td>35</td>
+  <td>0x23</td>
+  <td>主题别名 Topic Alias</td>
+  <td>两字节整形</td>
+  <td>PUBLISH</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">36</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x24</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">服务质量最大值 Maximum QoS</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">字节</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>36</td>
+  <td>0x24</td>
+  <td>服务质量最大值 Maximum QoS</td>
+  <td>字节</td>
+  <td>CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">37</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x25</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">保留可用 Retain Available</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">字节</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>37</td>
+  <td>0x25</td>
+  <td>保留可用 Retain Available</td>
+  <td>字节</td>
+  <td>CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">38</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x26</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">用户属性 User Property</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">UTF-8 字符串对 UTF-8 String Pair</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNECT, CONNACK, PUBLISH, PUBACK, PUBREC, PUBREL,
-  PUBCOMP, SUBACK, UNSUBACK, DISCONNECT, AUTH</p>
-  </td>
+ <tr>
+  <td>38</td>
+  <td>0x26</td>
+  <td>用户属性 User Property</td>
+  <td>UTF-8 字符串对 UTF-8 String Pair</td>
+  <td>CONNECT, CONNACK, PUBLISH, PUBACK, PUBREC, PUBREL, PUBCOMP, SUBACK, UNSUBACK, DISCONNECT, AUTH</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">39</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x27</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">最大报文大小 Maximum Packet Size </p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">四字节整形</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNECT, CONNACK</p>
-  </td>
+ <tr>
+  <td>39</td>
+  <td>0x27</td>
+  <td>最大报文大小 Maximum Packet Size </td>
+  <td>四字节整形</td>
+  <td>CONNECT, CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">40</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x28</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">可用通配符订阅 Wildcard Subscription Available</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">字节</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>40</td>
+  <td>0x28</td>
+  <td>可用通配符订阅 Wildcard Subscription Available</td>
+  <td>字节</td>
+  <td>CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">41</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x29</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">可用订阅标识符 Subscription Identifier Available</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">Byte</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>41</td>
+  <td>0x29</td>
+  <td>可用订阅标识符 Subscription Identifier Available</td>
+  <td>Byte</td>
+  <td>CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="45" valign="top" style="width:33.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">42</p>
-  </td>
-  <td width="51" valign="top" style="width:38.05pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x2A</p>
-  </td>
-  <td width="188" valign="top" style="width:141.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">可用共享订阅 Shared Subscription Available</p>
-  </td>
-  <td width="150" valign="top" style="width:112.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">字节</p>
-  </td>
-  <td width="251" valign="top" style="width:188.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>42</td>
+  <td>0x2A</td>
+  <td>可用共享订阅 Shared Subscription Available</td>
+  <td>字节</td>
+  <td>CONNACK</td>
  </tr>
-</tbody></table>
+</tbody>
+</table>
 
 > **非规范评注**
 
@@ -951,979 +417,289 @@ CONNACK, PUBACK, PUBREC, PUBREL, PUBCOMP, DISCONNECT 和 AUTH 控制包有单个
 
 以下的 Reason Codes 一览列表:
 
-<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="673" style="width:504.9pt;border-collapse:collapse;border:none">
- <tbody><tr style="page-break-inside:avoid">
-  <td width="113" colspan="2" valign="top" style="width:84.5pt;border:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" align="center" style="text-align:center"><b>原因码</b></p>
-  </td>
-  <td width="211" rowspan="2" valign="top" style="width:158.5pt;border:solid windowtext 1.0pt;
-  border-left:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" align="center" style="text-align:center"><b>名称</b></p>
-  </td>
-  <td width="349" rowspan="2" valign="top" style="width:261.9pt;border:solid windowtext 1.0pt;
-  border-left:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" align="center" style="text-align:center"><b>报文</b></p>
-  <p class="MsoNormal" align="center" style="text-align:center"><b>&nbsp;</b></p>
-  </td>
+<table style="text-align:center">
+ <tbody>
+ <tr>
+  <td colspan="2"><b>原因码</b></td>
+  <td rowspan="2"><b>名称</b></td>
+  <td rowspan="2"><b>报文</b></td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" align="center" style="text-align:center"><b>十进制</b></p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal" align="center" style="text-align:center"><b>十六进制</b></p>
-  </td>
+ <tr>
+  <td><b>十进制</b></td>
+  <td><b>十六进制</b></td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x00</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">成功 Success</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, PUBACK, PUBREC, PUBREL, PUBCOMP, UNSUBACK, AUTH</p>
-  </td>
+ <tr>
+  <td>0</td>
+  <td>0x00</td>
+  <td>成功 Success</td>
+  <td>CONNACK, PUBACK, PUBREC, PUBREL, PUBCOMP, UNSUBACK, AUTH</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x00</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">正常断连 Normal disconnection</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">DISCONNECT</p>
-  </td>
+ <tr
+  <td>0</td>
+  <td>0x00</td>
+  <td>正常断连 Normal disconnection</td>
+  <td>DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x00</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">准许 QoS 0  Granted QoS 0</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">SUBACK</p>
-  </td>
+ <tr>
+  <td>0</td>
+  <td>0x00</td>
+  <td>准许 QoS 0  Granted QoS 0</td>
+  <td>SUBACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">1</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x01</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"> 准许 QoS 1 Granted QoS 1</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">SUBACK</p>
-  </td>
+ <tr>
+  <td>1</td>
+  <td>0x01</td>
+  <td>准许 QoS 1 Granted QoS 1</td>
+  <td>SUBACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">2</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x02</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"> 准许 QoS 2  Granted QoS 2</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">SUBACK</p>
-  </td>
+ <tr>
+  <td>2</td>
+  <td>0x02</td>
+  <td>准许 QoS 2  Granted QoS 2</td>
+  <td>SUBACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">4</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x04</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">以遗嘱消息断开连接 Disconnect with Will Message</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">DISCONNECT</p>
-  </td>
+ <tr>
+  <td>4</td>
+  <td>0x04</td>
+  <td>以遗嘱消息断开连接 Disconnect with Will Message</td>
+  <td>DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">16</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x10</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"> 没有匹配的订阅者 No matching subscribers</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">PUBACK, PUBREC</p>
-  </td>
+ <tr>
+  <td>16</td>
+  <td>0x10</td>
+  <td>没有匹配的订阅者 No matching subscribers</td>
+  <td>PUBACK, PUBREC</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">17</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x11</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">没有订阅 No subscription existed</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">UNSUBACK</p>
-  </td>
+ <tr>
+  <td>17</td>
+  <td>0x11</td>
+  <td>没有订阅 No subscription existed</td>
+  <td>UNSUBACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">24</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x18</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">继续认证 Continue authentication</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">AUTH</p>
-  </td>
+ <tr>
+  <td>24</td>
+  <td>0x18</td>
+  <td>继续认证 Continue authentication</td>
+  <td>AUTH</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">25</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x19</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">重新认证 Re-authenticate</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">AUTH</p>
-  </td>
+ <tr>
+  <td>25</td>
+  <td>0x19</td>
+  <td>重新认证 Re-authenticate</td>
+  <td>AUTH</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">128</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x80</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">未指定错误 Unspecified error</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, PUBACK, PUBREC, SUBACK, UNSUBACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>128</td>
+  <td>0x80</td>
+  <td>未指定错误 Unspecified error</td>
+  <td>CONNACK, PUBACK, PUBREC, SUBACK, UNSUBACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">129</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x81</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">畸形报文 Malformed Packet</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>129</td>
+  <td>0x81</td>
+  <td>畸形报文 Malformed Packet</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">130</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x82</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">协议错误 Protocol Error</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>130</td>
+  <td>0x82</td>
+  <td>协议错误 Protocol Error</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">131</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x83</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">实现特有错误 Implementation specific error</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, PUBACK, PUBREC, SUBACK, UNSUBACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>131</td>
+  <td>0x83</td>
+  <td>实现特有错误 Implementation specific error</td>
+  <td>CONNACK, PUBACK, PUBREC, SUBACK, UNSUBACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">132</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x84</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">不支持的协议版本 Unsupported Protocol Version</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>132</td>
+  <td>0x84</td>
+  <td>不支持的协议版本 Unsupported Protocol Version</td>
+  <td>CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">133</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x85</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">客户端标识符无效 Client Identifier not valid</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>133</td>
+  <td>0x85</td>
+  <td>客户端标识符无效 Client Identifier not valid</td>
+  <td>CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">134</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x86</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">错误的用户名和密码 Bad User Name or Password</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>134</td>
+  <td>0x86</td>
+  <td>错误的用户名和密码 Bad User Name or Password</td>
+  <td>CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">135</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x87</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">未授权 Not authorized</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"> CONNACK, PUBACK, PUBREC, SUBACK, UNSUBACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>135</td>
+  <td>0x87</td>
+  <td>未授权 Not authorized</td>
+  <td>CONNACK, PUBACK, PUBREC, SUBACK, UNSUBACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">136</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x88</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">服务器不可用 Server unavailable</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>136</td>
+  <td>0x88</td>
+  <td>服务器不可用 Server unavailable</td>
+  <td>CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">137</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x89</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">服务器繁忙 Server busy</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>137</td>
+  <td>0x89</td>
+  <td>服务器繁忙 Server busy</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">138</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x8A</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">禁止访问 Banned</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK</p>
-  </td>
+ <tr>
+  <td>138</td>
+  <td>0x8A</td>
+  <td>禁止访问 Banned</td>
+  <td>CONNACK</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">139</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x8B</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">服务器关机中 Server shutting down</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">DISCONNECT</p>
-  </td>
+ <tr>
+  <td>139</td>
+  <td>0x8B</td>
+  <td>服务器关机中 Server shutting down</td>
+  <td>DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">140</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x8C</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">错误验证方法 Bad authentication method</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>140</td>
+  <td>0x8C</td>
+  <td>错误验证方法 Bad authentication method</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">141</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x8D</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">保活超时 Keep Alive timeout</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">DISCONNECT</p>
-  </td>
+ <tr>
+  <td>141</td>
+  <td>0x8D</td>
+  <td>保活超时 Keep Alive timeout</td>
+  <td>DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">142</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x8E</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">会话被接管 Session taken over</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">DISCONNECT</p>
-  </td>
+ <tr>
+  <td>142</td>
+  <td>0x8E</td>
+  <td>会话被接管 Session taken over</td>
+  <td>DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">143</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x8F</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">主题过滤器无效 Topic Filter invalid</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">SUBACK, UNSUBACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>143</td>
+  <td>0x8F</td>
+  <td>主题过滤器无效 Topic Filter invalid</td>
+  <td>SUBACK, UNSUBACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">144</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x90</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">主题名无效 Topic Name invalid</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, PUBACK, PUBREC, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>144</td>
+  <td>0x90</td>
+  <td>主题名无效 Topic Name invalid</td>
+  <td>CONNACK, PUBACK, PUBREC, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">145</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x91</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">报文标识符在使用中 Packet Identifier in use</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">PUBACK, PUBREC, SUBACK, UNSUBACK</p>
-  </td>
+ <tr>
+  <td>145</td>
+  <td>0x91</td>
+  <td>报文标识符在使用中 Packet Identifier in use</td>
+  <td>PUBACK, PUBREC, SUBACK, UNSUBACK=</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">146</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x92</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">没有发现报文标识符 Packet Identifier not found</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">PUBREL, PUBCOMP</p>
-  </td>
+ <tr>
+  <td>146</td>
+  <td>0x92</td>
+  <td>没有发现报文标识符 Packet Identifier not found</td>
+  <td>PUBREL, PUBCOMP</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">147</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x93</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">超出接收最大值 Receive Maximum exceeded</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">DISCONNECT</p>
-  </td>
+ <tr>
+  <td>147</td>
+  <td>0x93</td>
+  <td>超出接收最大值 Receive Maximum exceeded</td>
+  <td>DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">148</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x94</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">主题别名无效 Topic Alias invalid</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">DISCONNECT</p>
-  </td>
+ <tr>
+  <td>148</td>
+  <td>0x94</td>
+  <td>主题别名无效 Topic Alias invalid</td>
+  <td>DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">149</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x95</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">报文太大 Packet too large</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>149</td>
+  <td>0x95</td>
+  <td>报文太大 Packet too large</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">150</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x96</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">消息传输速率太高 Message rate too high</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">DISCONNECT</p>
-  </td>
+ <tr>
+  <td>150</td>
+  <td>0x96</td>
+  <td>消息传输速率太高 Message rate too high</td>
+  <td>DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">151</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x97</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"> 超出限额 Quota exceeded</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, PUBACK, PUBREC, SUBACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>151</td>
+  <td>0x97</td>
+  <td>超出限额 Quota exceeded</td>
+  <td>CONNACK, PUBACK, PUBREC, SUBACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">152</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x98</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">管理行为 Administrative action</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">DISCONNECT</p>
-  </td>
+ <tr>
+  <td>152</td>
+  <td>0x98</td>
+  <td>管理行为 Administrative action</td>
+  <td>DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">153</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x99</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">有效载荷格式无效 Payload format invalid</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">PUBACK, PUBREC, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>153</td>
+  <td>0x99</td>
+  <td>有效载荷格式无效 Payload format invalid</td>
+  <td>PUBACK, PUBREC, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">154</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x9A</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">不支持消息保留 Retain not supported</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>154</td>
+  <td>0x9A</td>
+  <td>不支持消息保留 Retain not supported</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">155</p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x9B</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">不支持的QoS QoS not supported</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>155</td>
+  <td>0x9B</td>
+  <td>不支持的QoS QoS not supported</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><span style="font-size:10.5pt;color:#333333">156</span></p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x9C</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">使用另一台服务器 Use another server</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>156</td>
+  <td>0x9C</td>
+  <td>使用另一台服务器 Use another server</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><span style="font-size:10.5pt;color:#333333">157</span></p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x9D</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">服务器被移除 Server moved</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>157</td>
+  <td>0x9D</td>
+  <td>服务器被移除 Server moved</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><span style="font-size:10.5pt;color:#333333">158</span></p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x9E</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">不支持的共享订阅 Shared Subscription not supported</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">SUBACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>158</td>
+  <td>0x9E</td>
+  <td>不支持的共享订阅 Shared Subscription not supported</td>
+  <td>SUBACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><span style="font-size:10.5pt;color:#333333">159</span></p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0x9F</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">超出连接速率 Connection rate exceeded</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">CONNACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>159</td>
+  <td>0x9F</td>
+  <td>超出连接速率 Connection rate exceeded</td>
+  <td>CONNACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><span style="font-size:10.5pt;color:#333333">160</span></p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0xA0</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">最大连接时间 Maximum connect time</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">DISCONNECT</p>
-  </td>
+ <tr>
+  <td>160</td>
+  <td>0xA0</td>
+  <td>最大连接时间 Maximum connect time</td>
+  <td>DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><span style="font-size:10.5pt;color:#333333">161</span></p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0xA1</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">不支持的订阅标识符 Subscription Identifiers not supported</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">SUBACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>161</td>
+  <td>0xA1</td>
+  <td>不支持的订阅标识符 Subscription Identifiers not supported</td>
+  <td>SUBACK, DISCONNECT</td>
  </tr>
- <tr style="page-break-inside:avoid">
-  <td width="66" valign="top" style="width:49.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal"><span style="font-size:10.5pt;color:#333333">162</span></p>
-  </td>
-  <td width="47" valign="top" style="width:35.3pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">0xA2</p>
-  </td>
-  <td width="211" valign="top" style="width:158.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">不支持的通配符订阅 Wildcard Subscription not supported</p>
-  </td>
-  <td width="349" valign="top" style="width:261.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt">
-  <p class="MsoNormal">SUBACK, DISCONNECT</p>
-  </td>
+ <tr>
+  <td>162</td>
+  <td>0xA2</td>
+  <td>不支持的通配符订阅 Wildcard Subscription not supported</td>
+  <td>SUBACK, DISCONNECT</td>
  </tr>
-</tbody></table>
+</tbody>
+</table>
 
 > 非正式评注
 
